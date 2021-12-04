@@ -8,10 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LabelInputComponent implements OnInit {
 
   @Input()
-  label: String = '';
+  label: string = '';
 
   @Input()
-  valorDeEntrada: String = '';
+  idInput: string = '';
 
   @Input()
   type: String = "text" || "email" || "password";

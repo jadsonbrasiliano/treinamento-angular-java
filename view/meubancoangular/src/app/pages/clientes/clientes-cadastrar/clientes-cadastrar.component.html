@@ -1,1 +1,30 @@
-<p>clientes-cadastrar works!</p>
+<h1>Cadastrar Cliente</h1>
+
+<form [formGroup]="checkOutForm" (ngSubmit)="onSubmit()">
+
+  <div class="row">
+
+    <div class="col mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input id="nome" type="text" class="form-control" formControlName="nome">
+    </div>
+
+    <div class="col mb-3">
+      <label for="cpf" class="form-label">CPF</label>
+      <input id="cpf" type="text" class="form-control" formControlName="cpf">
+    </div>
+
+    <div class="col mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input id="email" type="text" class="form-control" formControlName="email">
+    </div>
+
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text">Observações</span>
+    <textarea class="form-control" aria-label="With textarea" formControlName="obs"></textarea>
+  </div>
+
+  <button class="button" type="submit" alert="true" class="btn btn-dark">Cadastrar</button>
+</form>

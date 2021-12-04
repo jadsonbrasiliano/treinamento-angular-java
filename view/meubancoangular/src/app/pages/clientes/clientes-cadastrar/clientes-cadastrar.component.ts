@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-clientes-cadastrar',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientesCadastrarComponent implements OnInit {
 
-  constructor() { }
+  checkOutForm = this.formBuilder.group({
+    nome: '',
+    cpf: '',
+    email: '',
+    obs: ''
+  });
+
+  @Input()
+  alert: boolean = false;
+
+  constructor( private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(): void {
+    // Processar a saída aqui
+    console.warn("Seus dados foram enviados!",
+    this.checkOutForm.value);
+    this.checkOutForm.reset();
+  }
 }

@@ -1,33 +1,35 @@
 <h1>Clientes</h1>
 
-<table class="table">
+<div>
+  <div *ngIf="!clientes.length" class="spinner-border spinner-border-sm mb-3" role="status">
+    <span class="visually-hidden">Carregando...</span>
+  </div>
+</div>
+
+<table *ngIf="clientes.length" class="table table-dark table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nome</th>
-      <th scope="col">Sobrenome</th>
-      <th scope="col">Marca</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Observações</th>
+      <th scope="col">Ativo</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+    <tr *ngFor="let cliente of clientes">
+      <th scope="row">{{cliente.id}}</th>
+      <td>{{cliente.nome}}</td>
+      <td>{{cliente.email}}</td>
+      <td>{{cliente.cpf}}</td>
+      <td>{{cliente.observacoes }}</td>
+      <td>
+        <i *ngIf="cliente.ativo" class="fas fa-thumbs-up text-success"></i>
+        <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
+      </td>
     </tr>
   </tbody>
 </table>
 
-<app-button labelButton="Cadastrar novo cliente"></app-button>
+<app-button labelButton="Cadastrar novo cliente" routerLink="/clientes-cadastrar"></app-button>
