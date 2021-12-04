@@ -1,1 +1,30 @@
-<p>contas works!</p>
+<h1>Contas</h1>
+
+<div>
+  <div *ngIf="!contas.length" class="spinner-border spinner-border-sm mb-3" role="status">
+    <span class="visually-hidden">Carregando...</span>
+  </div>
+</div>
+
+<table *ngIf="contas.length" class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Agência</th>
+      <th scope="col">Conta</th>
+      <th scope="col">Saldo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let conta of contas">
+      <th scope="row">{{conta.id}}</th>
+      <td>{{conta.cliente.nome}}</td>
+      <td>{{conta.agencia}}</td>
+      <td>{{conta.numero}}</td>
+      <td>{{conta.saldo}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<app-button labelButton="Cadastrar nova conta"></app-button>
