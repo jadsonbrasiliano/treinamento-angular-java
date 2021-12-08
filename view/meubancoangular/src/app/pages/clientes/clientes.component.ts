@@ -33,13 +33,13 @@ export class ClientesComponent implements OnInit {
       text: "Você não poderá reverter isso!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Sim, delete isso!'
+      confirmButtonText: 'Sim, delete este cliente!'
     }).then((result) => {
       if (result.isConfirmed) {
         this.clienteService.remover(id).subscribe(result => {
           Swal.fire(
             'Deletado!',
-            'Seu aquivo foi removido com sucesso!.',
+            'O cliente informado foi deletado!',
             'success'
           )
           this.listarTodosClientes();

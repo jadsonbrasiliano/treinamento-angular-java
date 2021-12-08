@@ -1,11 +1,6 @@
 <h1>Cadastro de Clientes</h1>
 <hr>
 
-<small>
-  {{ formGroup.value | json }}
-  {{ formGroup.valid }}
-</small>
-
 <form [formGroup]="formGroup" (ngSubmit)="enviar()">
 
   <div class="mb-3">

@@ -32,7 +32,7 @@ export class CadastroEdicaoClientesComponent implements OnInit {
   enviar() {
     const cliente: Cliente = this.formGroup.value;
     this.clientesService.cadastrar(cliente).subscribe(clienteAPI =>{
-      Swal.fire("Funcionou", "Cadastrado com sucesso!", "success");
+      Swal.fire("Cadastrado", "Cadastrado com sucesso!", "success");
       this.router.navigate(['/clientes'])
     }, error => {
       console.log(error);
