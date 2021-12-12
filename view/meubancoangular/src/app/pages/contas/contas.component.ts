@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Conta } from 'src/app/interfaces/conta';
 import { ContasService } from 'src/app/services/contas.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contas',
@@ -25,4 +26,26 @@ export class ContasComponent implements OnInit {
     })
   }
 
+  confirmar(id: number){
+    Swal.fire({
+      title: 'Você tem certeza?',
+      text: "Você não poderá reverter isso!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, delete esta conta!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.contasService.remover(id).subscribe(result => {
+          Swal.fire(
+            'Deletado!',
+            'A conta informada foi deletada!',
+            'success'
+          )
+          this.listarContas();
+        }, error => {
+          console.error(error);
+        });
+      }
+    })
+  }
 }

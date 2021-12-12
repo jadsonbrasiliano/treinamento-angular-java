@@ -30,6 +30,7 @@
         <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
       </td>
       <td>
+        <a class="btn btn-info btn-sm" routerLink="/clientes/editar/{{cliente.id}}">Editar</a>
         <a class="btn btn-danger btn-sm" (click)="confirmar(cliente.id)">Remover</a>
       </td>
     </tr>

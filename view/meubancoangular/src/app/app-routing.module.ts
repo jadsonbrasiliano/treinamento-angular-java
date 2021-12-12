@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroEdicaoClientesComponent } from './pages/clientes/cadastro-edicao-clientes/cadastro-edicao-clientes.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { CadastroEdicaoContasComponent } from './pages/contas/cadastro-edicao-contas/cadastro-edicao-contas.component';
 import { ContasComponent } from './pages/contas/contas.component';
 import { DepositoComponent } from './pages/deposito/deposito.component';
 import { ExtratoComponent } from './pages/extrato/extrato.component';
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'deposito', component: DepositoComponent},
   { path: 'clientes', component: ClientesComponent},
   { path: 'contas', component: ContasComponent},
+  { path: 'contas/cadastrar', component: CadastroEdicaoContasComponent},
+  { path: 'contas/editar/:id', component: CadastroEdicaoContasComponent},
   { path: 'transferencia', component: TransferenciaComponent},
   { path: 'clientes/cadastrar', component: CadastroEdicaoClientesComponent },
   { path: 'clientes/editar/:id', component: CadastroEdicaoClientesComponent}

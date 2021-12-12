@@ -1,0 +1,23 @@
+<h1>Cadastro de contas</h1>
+<hr>
+
+<form [formGroup]="formGroup" (ngSubmit)="enviar()">
+
+  <div class="mb-3">
+    <label>Agência</label>
+    <input type="text" class="form-control" formControlName="agencia">
+  </div>
+
+  <div class="mb-3">
+    <label>Número da conta</label>
+    <input type="text" class="form-control" formControlName="numero">
+  </div>
+
+  <div class="mb-3">
+    <label>Saldo da conta</label>
+    <input type="text" class="form-control" formControlName="saldo">
+  </div>
+
+  <button type="submit" [disabled]="!formGroup.valid" class="btn btn-dark">Enviar</button>
+</form>
+

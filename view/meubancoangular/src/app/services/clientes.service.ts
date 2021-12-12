@@ -18,11 +18,19 @@ export class ClientesService {
     return this.http.get<Cliente[]>(this.api);
   }
 
+  pegarPorId(id: number){
+    return this.http.get<Cliente>(`${this.api}/${id}`);
+  }
+
   cadastrar(cliente: Cliente) {
     return this.http.post<Cliente>(this.api, cliente);
   }
 
   remover(id: number) {
     return this.http.delete(`${this.api}/${id}`);
+  }
+
+  editar(cliente: Cliente) {
+    return this.http.put(`${this.api}/editar/`, cliente);
   }
 }

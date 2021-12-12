@@ -16,6 +16,14 @@ export class ContasService {
     private http: HttpClient
   ) { }
 
+  cadastrar(conta: Conta) {
+    return this.http.post(this.api, conta);
+  }
+
+  remover(id: number) {
+    return this.http.delete(`${this.api}/${id}`);
+  }
+  
   listarContas(){
     return this.http.get<Conta[]>(this.api)
   }
