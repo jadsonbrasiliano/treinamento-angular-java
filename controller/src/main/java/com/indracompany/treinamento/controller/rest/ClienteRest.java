@@ -14,8 +14,4 @@ public class ClienteRest extends GenericCrudRest<Cliente, Long, ClienteService>{
 	@Autowired
 	private ClienteService clienteService;
 	
-
-
-	
-
 }
